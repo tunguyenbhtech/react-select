@@ -43,6 +43,7 @@ export default class SingleSelect extends Component<*, State> {
     return (
       <Fragment>
         <Select
+          autoFocusFirstOption={false}
           className="basic-single"
           classNamePrefix="select"
           defaultValue={colourOptions[0]}
