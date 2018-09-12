@@ -1061,6 +1061,9 @@ export default class Select extends Component<Props, State> {
     }
     this.setState({ focusedOption });
   };
+  onOptionLeave = () => {
+    this.setState({ focusedOption: null });
+  }
   shouldHideSelectedOptions = () => {
     const { hideSelectedOptions, isMulti } = this.props;
     if (hideSelectedOptions === undefined) return isMulti;
@@ -1221,6 +1224,7 @@ export default class Select extends Component<Props, State> {
 
       const onHover = isDisabled ? undefined : () => this.onOptionHover(option);
       const onSelect = isDisabled ? undefined : () => this.selectOption(option);
+      const onMouseLeave = isDisabled ? undefined : () => this.onOptionLeave();
       const optionId = `${this.getElementId('option')}-${id}`;
 
       return {
@@ -1229,6 +1233,7 @@ export default class Select extends Component<Props, State> {
           onClick: onSelect,
           onMouseMove: onHover,
           onMouseOver: onHover,
+          onMouseLeave: onMouseLeave,
           role: 'option',
           tabIndex: -1,
         },
