@@ -1,6 +1,6 @@
 {
   "name": "tuna.react-select",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A Select control built with and for ReactJS",
   "main": "lib/index.js",
   "module": "dist/react-select.esm.js",
